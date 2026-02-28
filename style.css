@@ -1,0 +1,807 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quantico";
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.roadContainer {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: repeat-x;
+    transition: 0.15s;
+}
+
+.backLights {
+    position: absolute;
+    left: 5%;
+    width: 20px;
+    height: 70%;
+    display: flex;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.map1 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Images/Background.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0;
+    transition: 0.15s;
+}
+
+.map2 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Images/Background2.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0;
+    transition: 0.15s;
+}
+
+.map3 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Images/Background3.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0;
+    transition: 0.15s;
+}
+
+.mapMenu {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #b0d6e6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(https://www.supercars.net/blog/wp-content/uploads/2020/10/2020-Koenigsegg-Jesko-012-2160-scaled.jpg);
+}
+
+.mapContainer {
+    width: 80%;
+    height: 80%;
+    background-color: #87cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customizationMenu {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url(Images/CustomizationBackground.jpg);
+}
+
+.mapSelectionTitle {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.mapSelectionDiv {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #a1d6ed;
+    border-top: 5px #7ab6d0 solid;
+    gap: 20px;
+}
+
+.mapSelect1 {
+    height: 70%;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px #fff solid;
+}
+
+.mapName {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: #a8e5ff;
+    color: #fff;
+    border-bottom: 5px solid #87c9e5;
+}
+
+.mapBtnDiv {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8bd0ee;
+}
+
+.topImage {
+    width: 100%;
+    height: 40%;
+    background-color: #ee7d27;
+    background-size: cover;
+    background-position: center;
+}
+
+#plains {
+    background-image: url(Images/Background.png);
+}
+
+#seaTrip {
+    background-image: url(Images/Background2.png);
+}
+
+#whiteRuins {
+    background-image: url(Images/Background3.png);
+}
+
+.mapBtnDesign {
+    width: 60%;
+    height: 40%;
+    border: none;
+    font-size: 30px;
+    background-color: rgb(132, 232, 132);
+    font-weight: 500;
+    color: #fff;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.mapBtnDesign:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+.mapBtnDesign:active {
+    transform: scale(0.9);
+    filter: brightness(0.9);
+}
+
+.left {
+    width: 70%;
+    height: 100%;
+    background-color: rgb(255, 196, 120);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.carBox {
+    width: 13%;
+    aspect-ratio: 1 / 1;
+    background-color: #999999;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    cursor: pointer;
+    filter: drop-shadow(#ffffff 0 0 10px);
+}
+
+.carBox:hover {
+    transform: scale(1.15);
+}
+
+.carBox:active {
+    transform: scale(0.9);
+    filter: drop-shadow(#ffffff 0 0 0) brightness(0.7);
+}
+
+.driverBox {
+    width: 13%;
+    aspect-ratio: 1 / 1;
+    background-color: #999999;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    cursor: pointer;
+    filter: drop-shadow(#ffffff 0 0 10px);
+}
+
+.driverBox:hover {
+    transform: scale(1.15);
+}
+
+.driverBox:active {
+    transform: scale(0.9);
+    filter: drop-shadow(#ffffff 0 0 0) brightness(0.7);
+}
+
+#car1 {
+    background-size: 80%;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/019/070/948/small_2x/sport-car-isolated-on-transparent-background-3d-rendering-illustration-free-png.png)
+}
+
+#car2 {
+    background-size: 80%;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/047/428/462/small/top-view-of-red-sedan-car-with-transparent-background-png.png)
+}
+
+#car3 {
+    background-size: 80%;
+    background-image: url(https://iod.prs.porsche.com/iod/image/UZ/9926S2/1/N4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaXCAAde9RAAtcIKkPxFmIAG5pRGSchCtahANYDBIAL4GqtKArj1odKGpbt1AdTFxcDCBCwBBADaCxTaUFZKGJUIypvcXwoJFQQNg4AEU8ATSkQGQIQ5nCQQUtWAFcwW3j7EABOCoAmADYAZWr0zLk4yEKbegBPAGEITQ4AVQAtdKx+2m8U2mUUaoAGOsDg0JIQeYBJAGZ0+YA5AEZdvZ7dgAUK3YAVRPSDgCEACTuAcXm7gBkAJTvD3+eqAczu9AWcAKJ3K5NQEANTuAA0jlRqj0AKzpaqJdHImFIkDVBwg-HDU5ULb3HZkgBie3SW0enjpACkACx0gCKVzp9SJW0GL3SLM8lJALMSRJZLypgo2tUFHzlVBZg2lVFRFVuaoAsoy1fDSSBap4AOzpWr3XWGsF42pgiFUWpUomOplmjbOpmaw0AaQAHGa9qMHV8DbV4XCqMbPN70sbHjHI96RcatZdI-zYzCicb4dCQMaUkTfUzBulfR9Lb69qaqL6rnjfTCBVQKqjLRVPF6KvciRUme2LukKjCE5UHFyW8N7SAwfNLWCtXmaUSqVcV8MiS8Ds2QC807vHiKXldsbvcekNr6gyANjD9xtCek-aPvZ48972XiPsfEl8PuktWNA0zgBEB2TbdJ2VnSDHjxdl2Tzdkvn9Kh2RhEUvgAeUwqlMPBWkqEGQcqBhHoiRhJ10hhD53jIIxjBAQhaFwaIEFCUAYAgegcDUPIYnSXBGBCQRlFMNRBMKWgjCAA?clientId=icc)
+}
+
+#car4 {
+    background-size: 80%;
+    background-image: url(https://iod.prs.porsche.com/iod/image/VN/Y1AGI1/1/N4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaXCAAde9RAAtcIKkPxFmIAG5pRGSchCtahANYDBIAL4GqtKArj1odKGpbt1AdTFxcDCBCwBBADaCxTaUFZKGJUIypvcXwoJFQQNg4AEU8ATSkQGQIQ5nCQQUtWAFcwW3j7EBSARk8AcQBJSvTMuTjIQpt6AE8AYQhNDgA1ADl0rD7abxTaZRQAJgAGWYA2QODQkhB5ocaqLe70+YAVRPTKmvnTgBkAJVOhgGY7z1OABQuqSpeAUVPD2dOABr-KizboAdnSs0SAFZIQAJSEAKQAQpCBo8QQ4AJzpe7IgAsuO6zyo9wAYiSQPdERDSQBpGq4l4jUkARUOuIAyu8QPjPBjeYkefiycDeQBVMnpfEAgVLaF09JLTw8paJS5Kr47EBLMmqsmIpU1SlLOpyxEnKhLOkADiVQ0NVuu+ytAIG6TByo9nkVVDBdIFYPFjL9ANhfpSdqoNrq4vSNsuCOjhyW8YGGqoWOhqMzyJ5WMRlKxAFkBViXmX0+ksQ4OZmAFo-KieG0ukCeOo4qhfeaUr7FsVfAY8smHAU1SoA9I1RE8mql6eHOcDbU1es8uH4uNUOo2+vpOoDLsgOoOHmIrGs9KIuHngE822c9J0zypqh05ECulw8MgOnc9JLkqHMQEuGpjmuDMQCGNshjPdJWVmR0QFZLUEMRQkqFZVltVZa4oxQ4d0nFRJtQGboeQGPV0nTSjrlpEABkOY8BgcVMyCMYwQEIWhcGiBBQlAGAIHoHA1DyGJ0lwRgQkEZRTDUaTCloIwgA?clientId=icc)
+}
+
+#car5 {
+    background-size: 80%;
+    background-image: url(https://iod.prs.porsche.com/iod/image/CA/Y1ADJ1/1/N4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaXCAAde9RAAtcIKkPxFmIAG5pRGSchCtahANYDBIAL4GqtKArj1odKGpbt1AdTFxcDCBCwBBADaCxTaUFZKGJUIypvcXwoJFQQNg4AEU8ATSkQGQIQ5nCQQUtWAFcwW3j7EBSARk9EgClK9My5OMhCm3oATwBhCE0OLs90rF7abxTaZRQAJgAGKYA2QODQkhAZgDkGqhmARQBxdJmAFUT0yr2ADjOAGQBlM-WAZgfBqkqABRmz94BRM6Ovm8ABpbEBTLoAVnSU0SgLBtQAQtCAGqgqYOACc0IAWkiqI8EQAWdKPAYkgBirxAj1qxPxAGkDvjrnTqbc4YSLqcqITPM8ebD0oTyfMhXtyUKAKp4kCEoGsiFAoHpeaeOHzH6g+bk9XkpkgeZ7KnzACS-INtW5BvpVyo8wAsir1jsVQAlLoqoHI9IAdkefyoPtVvs8119eyxgYAElSffTzT77ZGQD7JfqfUCpr6UraQBcTUd0hdrlSLkdRVQLsj9RiIVSMTV0hiEXCMbV6-bzRj3j6m8j6U2HIWqBjsQGQJ4LhKqJ4qZ4TcnElNlVQfjMqT97VnV8i4eSAelydi4XtKiuQHtaif7ay9qj0ntj+kTcjWSaHObahjx7Uo3DakCcI2vcVD0p424gPSCLmvS7LpNcewnK6YZUOstQQesDisjs5zpDsa54eheE4XhrrJjskq5jsDhQlQkqCnR7zJsiXQQciOrpMi1xwsirpwmOHpkEYxggIQtC4NECChKAMAQPQOBqHkMTpLgjAhIIyimGoqmFLQRhAA?clientId=icc)
+}
+
+#driver1 {
+    background-size: 80% 80%;
+    background-image: url(Images/Sashko.png)
+}
+
+#driver2 {
+    background-size: 80%;
+    background-image: url(Images/Stepa.jpg)
+}
+
+#driver3 {
+    background-size: 80%;
+    background-image: url(Images/Me.png)
+}
+
+#driver4 {
+    background-size: 80%;
+    background-image: url(Images/CatBoii.jpg)
+}
+
+#driver5 {
+    background-size: 80%;
+    background-image: url(Images/Vitalik.jpg)
+}
+
+.customizationTitle {
+    width: 100%;
+    height: 10%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+}
+
+.carDisplayDiv {
+    width: 80%;
+    min-height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carDisplayTitle {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee7d27;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.carDisplay {
+    width: 100%;
+    min-height: 80%;
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.driverDisplayDiv {
+    width: 80%;
+    min-height: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.driverDisplayTitle {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee7d27;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.driverDisplay {
+    width: 100%;
+    min-height: 70%;
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bottomDriverDiv {
+    width: 100%;
+    height: 15%;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomSwitchDiv {
+    width: 100px;
+    height: 80%;
+    background-color: #33313b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.switch {
+    width: 20px;
+    height: 20px;
+    background-color: #ee7d27;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.right {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.driverModel {
+    position: absolute;
+    display: block;
+    width: 20%;
+    aspect-ratio: 1/1;
+    background-image: url(Images/Sashko.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+}
+
+.carModel {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/019/070/948/small_2x/sport-car-isolated-on-transparent-background-3d-rendering-illustration-free-png.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+}
+
+.carCustomizationImage {
+    position: relative;
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-color: #33313b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customizationDiv {
+    width: 80%;
+    height: 80%;
+    background-color: rgb(244, 159, 48);
+    display: flex;
+    flex-direction: row;
+}
+
+.lowerBtnDiv {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#completeCustomization {
+    width: 30%;
+    height: 70%;
+    font-size: 30px;
+    border: none;
+    background-color: #ee7d27;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    filter: drop-shadow(#ee7d27 0 0 0);
+    cursor: pointer;
+}
+
+#completeCustomization:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(#ee7d27 0 0 10px) brightness(1.1);
+}
+
+#completeCustomization:active {
+    transform: scale(0.9);
+    filter: drop-shadow(#ee7d27 0 0 0) brightness(0.9);
+}
+
+.buttonDiv {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.btnDesign {
+    position: relative;
+    width: 1200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Images/Button.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -300px;
+    transition: 0.3s;
+    filter: brightness(1);
+    cursor: pointer;
+    font-size: 100px;
+    color: #fff;
+    font-weight: 800;
+}
+
+#customizeBtn {
+    background-image: url(Images/Button2.png);
+}
+
+.btnDesign:hover {
+    left: -110px;
+    filter: brightness(1.1);
+}
+
+.backLight1 {
+    width: 20px;
+    height: 8px;
+    background-color: red;
+    filter: blur(7px);
+}
+
+.backLight2 {
+    width: 20px;
+    height: 8px;
+    background-color: red;
+    filter: blur(7px);
+}
+
+.frontLights {
+    position: absolute;
+    right: -5%;
+    width: 40px;
+    height: 70%;
+    display: flex;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frontLight1 {
+    width: 40px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    filter: blur(7px);
+}
+
+.frontLight2 {
+    width: 40px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    filter: blur(7px);
+}
+
+.carContainer {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.2s;
+    position: absolute;
+    filter: drop-shadow(#282828 0 0 5px);
+}
+
+.carDiv {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/019/070/948/small_2x/sport-car-isolated-on-transparent-background-3d-rendering-illustration-free-png.png);
+}
+
+.driverDiv {
+    display: none;
+    width: 25%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+    background-image: url(Images/Me.png);
+}
+
+.textContainer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 700;
+}
+
+.textDiv {
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 20px;
+}
+
+.controlsText {
+    background-color: rgba(49, 49, 49, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+    width: 450px;
+    height: 400px;
+    color: #fff;
+    font-size: 25px;
+    border-top-left-radius: 30px;
+    transition: 0.5s;
+}
+
+.contrTitle {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.textV1 {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.mainMenu {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://gallery.yopriceville.com/downloadfullsize/send/11154);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.blackScreen {
+    width: 100%;
+    height: 100vh;
+    top: -100vh;
+    z-index: 10;
+    position: fixed;
+    background-color: #33313b;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#exitBtn1 {
+    position: relative;
+    left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(214, 58, 58);
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#exitBtn1:active {
+    transform: scale(0.7);
+}
+
+#exitBtn2 {
+    position: relative;
+    left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(214, 58, 58);
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#exitBtn2:active {
+    transform: scale(0.7);
+}
+
+#exitBtn3 {
+    position: relative;
+    left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(214, 58, 58);
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#exitBtn3:active {
+    transform: scale(0.7);
+}
+
+#exitBtn4 {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(214, 58, 58);
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#exitBtn4:active {
+    transform: scale(0.7);
+}
+
+.gearIcon {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px;
+    color: #fff;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.tipTextDiv {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #fff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .mapContainer {
+        width: 100%;
+        height: 100%;
+    }
+
+    .customizationDiv {
+        width: 100%;
+        height: 100%;
+    }
+}

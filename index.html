@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Racing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quantico:regular,italic,700,700italic" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1048/1048315.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="blackScreen">
+        <div class="gearIcon">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="tipTextDiv">
+            <p id="tipText">Here</p>
+        </div>
+    </div>
+    <div id="wrap" class="wrap">
+        <div class="mainMenu">
+            <div class="title"></div>
+            <div class="buttonDiv">
+                <div id="startBtn" class="btnDesign">
+                    <p>START</p>
+                </div>
+                <div id="customizeBtn" class="btnDesign">
+                    <p>CUSTOMIZE</p>
+                </div>
+            </div>
+        </div>
+        <div class="customizationMenu">
+            <div class="customizationDiv">
+                <div class="left">
+                    <div class="customizationTitle">
+                        <p>Customize your car</p>
+                    </div>
+                    <div class="carDisplayDiv">
+                        <div class="carDisplayTitle">
+                            <p>Car model</p>
+                        </div>
+                        <div class="carDisplay">
+                            <div id="car1" class="carBox"></div>
+                            <div id="car2" class="carBox"></div>
+                            <div id="car3" class="carBox"></div>
+                            <div id="car4" class="carBox"></div>
+                            <div id="car5" class="carBox"></div>
+                        </div>
+                    </div>
+                    <div class="driverDisplayDiv">
+                        <div class="driverDisplayTitle">
+                            <p>Car driver</p>
+                        </div>
+                        <div class="driverDisplay">
+                            <div id="driver1" class="driverBox"></div>
+                            <div id="driver2" class="driverBox"></div>
+                            <div id="driver3" class="driverBox"></div>
+                            <div id="driver4" class="driverBox"></div>
+                            <div id="driver5" class="driverBox"></div>
+                        </div>
+                        <div class="bottomDriverDiv">
+                            <div id="driverSwitch" class="bottomSwitchDiv">
+                                <div class="switch"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lowerBtnDiv">
+                        <button id="completeCustomization">I am done</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="carCustomizationImage">
+                        <div class="driverModel"></div>
+                        <div class="carModel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mapMenu">
+            <button id="exitBtn4">Exit</button>
+            <div class="mapContainer">
+                <div class="mapSelectionTitle">
+                    <p>Choose a map</p>
+                </div>
+                <div class="mapSelectionDiv">
+                    <div class="mapSelect1">
+                        <div id="plains" class="topImage"></div>
+                        <div class="mapName">
+                            <p>Plains</p>
+                        </div>
+                        <div class="mapBtnDiv">
+                            <button class="mapBtnDesign" id="plainsPlayBtn">Play</button>
+                        </div>
+                    </div>
+                    <div class="mapSelect1">
+                        <div id="seaTrip" class="topImage"></div>
+                        <div class="mapName">
+                            <p>Sea Trip</p>
+                        </div>
+                        <div class="mapBtnDiv">
+                            <button class="mapBtnDesign" id="seaTripPlayBtn">Play</button>
+                        </div>
+                    </div>
+                    <div class="mapSelect1">
+                        <div id="whiteRuins" class="topImage"></div>
+                        <div class="mapName">
+                            <p>White Ruins</p>
+                        </div>
+                        <div class="mapBtnDiv">
+                            <button class="mapBtnDesign" id="whiteRuinsPlayBtn">Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map1">
+            <div class="textContainer">
+                <div class="exitBtnDiv">
+                    <button id="exitBtn1">Exit</button>
+                </div>
+            </div>
+            <div class="controlsText">
+                <p class="contrTitle">Controls</p>
+                <p>Forward: <span class="textV1">D</span></p>
+                <p>Backwards: <span class="textV1">A</span></p>
+                <p>Lights: <span class="textV1">E</span></p>
+                <p>Rotate: <span class="textV1">R</span></p>
+                <p>Controls: Turn On/Off:<span class="textV1">P</span></p>
+            </div>
+            <div class="roadContainer">
+                <div class="carContainer">
+                    <div class="backLights">
+                        <div class="backLight1"></div>
+                        <div class="backLight2"></div>
+                    </div>
+                    <div class="frontLights">
+                        <div class="frontLight1"></div>
+                        <div class="frontLight2"></div>
+                    </div>
+                    <div id="carModelinGame" class="carDiv">
+                        <div class="driverDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map2">
+            <div class="textContainer">
+                <div class="exitBtnDiv">
+                    <button id="exitBtn2">Exit</button>
+                </div>
+            </div>
+            <div class="controlsText">
+                <p class="contrTitle">Controls</p>
+                <p>Forward: <span class="textV1">D</span></p>
+                <p>Backwards: <span class="textV1">A</span></p>
+                <p>Lights: <span class="textV1">E</span></p>
+                <p>Rotate: <span class="textV1">R</span></p>
+                <p>Controls: Turn On/Off:<span class="textV1">P</span></p>
+            </div>
+            <div class="roadContainer">
+                <div class="carContainer">
+                    <div class="backLights">
+                        <div class="backLight1"></div>
+                        <div class="backLight2"></div>
+                    </div>
+                    <div class="frontLights">
+                        <div class="frontLight1"></div>
+                        <div class="frontLight2"></div>
+                    </div>
+                    <div id="carModelinGame" class="carDiv">
+                        <div class="driverDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map3">
+            <div class="textContainer">
+                <div class="exitBtnDiv">
+                    <button id="exitBtn3">Exit</button>
+                </div>
+            </div>
+            <div class="controlsText">
+                <p class="contrTitle">Controls</p>
+                <p>Forward: <span class="textV1">D</span></p>
+                <p>Backwards: <span class="textV1">A</span></p>
+                <p>Lights: <span class="textV1">E</span></p>
+                <p>Rotate: <span class="textV1">R</span></p>
+                <p>Controls: Turn On/Off:<span class="textV1">P</span></p>
+            </div>
+            <div class="roadContainer">
+                <div class="carContainer">
+                    <div class="backLights">
+                        <div class="backLight1"></div>
+                        <div class="backLight2"></div>
+                    </div>
+                    <div class="frontLights">
+                        <div class="frontLight1"></div>
+                        <div class="frontLight2"></div>
+                    </div>
+                    <div id="carModelinGame" class="carDiv">
+                        <div class="driverDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
