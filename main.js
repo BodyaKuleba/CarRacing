@@ -275,7 +275,7 @@ function tipGenerator() {
     } else if (num == 4) {
         return "This is random"
     } else if (num == 5) {
-        return "Bogdan was here"
+        return "`Developer` was here"
     } else if (num == 6) {
         return "The maps were made in Figma"
     } else if (num == 7) {
@@ -283,15 +283,15 @@ function tipGenerator() {
     } else if (num == 8) {
         return "The font's name is Quantico"
     } else if (num == 9) {
-        return "Vitalik hello"
+        return "hello"
     } else if (num == 10) {
         return 'Hold "A" simulator'
     } else if (num == 11) {
         return "Sasha wasn't here"
     } else if (num == 12) {
-        return "Spartakur"
+        return "THIS IS `Insert image here`"
     } else if (num == 13) {
-        return "Stepa de svitlo"
+        return "Stop botting the domain"
     } else {
         return "Very cool."
     }
@@ -482,4 +482,5 @@ $("#driver4").click(() => {
 $("#driver5").click(() => {
     $(".driverDiv").css("background-image", `url(${changeDriver("driver5")})`)
     $(".driverModel").css("background-image", `url(${changeDriver("driver5")})`)
+
 })
